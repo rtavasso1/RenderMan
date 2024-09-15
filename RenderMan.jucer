@@ -59,9 +59,9 @@
                 extraLinkerFlags="-shared -lpython3.8 -lboost_python35" cppLanguageStandard="-std=c++11">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="renderman"
-                       headerPath="/usr/include/python3.8" libraryPath="/usr/local/lib"/>
+                       headerPath="/usr/local/include/python3.8" libraryPath="/usr/local/lib"/>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="renderman"
-                       headerPath="/usr/include/python3.8" libraryPath="/usr/local/lib"/>
+                       headerPath="/usr/local/include/python3.8" libraryPath="/usr/local/lib"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="JuceLibraryCode/modules"/>
