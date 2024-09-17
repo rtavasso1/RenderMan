@@ -17,8 +17,7 @@ namespace p = boost::python;
 void RenderEngine::fillAvailablePluginsInfo(const std::string& path,
                                             AudioPluginFormatManager& pluginFormatManager,
                                             OwnedArray<PluginDescription>& pluginDescriptions,
-                                            KnownPluginList& pluginList)
-{
+                                            KnownPluginList& pluginList) {
     pluginFormatManager.addDefaultFormats();
 
     std::cout << "Available plugin formats:" << std::endl;
@@ -43,10 +42,10 @@ void RenderEngine::fillAvailablePluginsInfo(const std::string& path,
 
             if (pluginDescriptions.size() == 0) {
                 std::cout << "No plugins found at the specified path." << std::endl;
+            }
         }
     }
 }
-
 
 std::string RenderEngine::getAvailablePluginsXml(const std::string& path) {
     AudioPluginFormatManager pluginFormatManager;
