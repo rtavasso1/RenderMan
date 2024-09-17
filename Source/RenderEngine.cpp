@@ -17,9 +17,8 @@ namespace p = boost::python;
 void RenderEngine::fillAvailablePluginsInfo(const std::string& path,
                                             AudioPluginFormatManager& pluginFormatManager,
                                             OwnedArray<PluginDescription>& pluginDescriptions,
-                                            KnownPluginList& pluginList
-                                            ) {
-
+                                            KnownPluginList& pluginList)
+{
     pluginFormatManager.addDefaultFormats();
 
     std::cout << "Available plugin formats:" << std::endl;
@@ -27,16 +26,24 @@ void RenderEngine::fillAvailablePluginsInfo(const std::string& path,
         std::cout << " - " << pluginFormatManager.getFormat(i)->getName().toStdString() << std::endl;
     }
 
-    for (int i = pluginFormatManager.getNumFormats(); --i >= 0;)
+    // Create a directory iterator to scan all files in the directory
+    DirectoryIterator dirIter(File(path), true, "*", File::findFiles);
+
+    while (dirIter.next())
     {
-        pluginList.scanAndAddFile (String (path),
-                                   true,
-                                   pluginDescriptions,
-                                   *pluginFormatManager.getFormat(i));
-        
-        if (pluginDescriptions.size() == 0) {
-           std::cout << "No plugins found at the specified path." << std::endl;
-}
+        File pluginFile = dirIter.getFile();
+
+        for (int i = 0; i < pluginFormatManager.getNumFormats(); ++i)
+        {
+            String errorMessage;
+            pluginList.scanAndAddFile(pluginFile.getFullPathName(),
+                                      true,
+                                      pluginDescriptions,
+                                      *pluginFormatManager.getFormat(i));
+
+            if (pluginDescriptions.size() == 0) {
+                std::cout << "No plugins found at the specified path." << std::endl;
+        }
     }
 }
 
