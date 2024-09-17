@@ -22,12 +22,21 @@ void RenderEngine::fillAvailablePluginsInfo(const std::string& path,
 
     pluginFormatManager.addDefaultFormats();
 
+    std::cout << "Available plugin formats:" << std::endl;
+    for (int i = 0; i < pluginFormatManager.getNumFormats(); ++i) {
+        std::cout << " - " << pluginFormatManager.getFormat(i)->getName().toStdString() << std::endl;
+    }
+
     for (int i = pluginFormatManager.getNumFormats(); --i >= 0;)
     {
         pluginList.scanAndAddFile (String (path),
                                    true,
                                    pluginDescriptions,
                                    *pluginFormatManager.getFormat(i));
+        
+        if (pluginDescriptions.size() == 0) {
+           std::cout << "No plugins found at the specified path." << std::endl;
+}
     }
 }
 
