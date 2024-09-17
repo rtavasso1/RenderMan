@@ -56,7 +56,8 @@
       </MODULEPATHS>
     </XCODE_MAC>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile" vst3Folder="VST3_SDK" extraCompilerFlags="-fPIC"
-                extraLinkerFlags="-shared -lpython3.8 -lboost_python38" cppLanguageStandard="-std=c++11">
+                extraLinkerFlags="-shared -lpython3.8 -lboost_python38" cppLanguageStandard="-std=c++11"
+                vstLegacyFolder="/vst3sdk">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="renderman"
                        headerPath="/usr/local/include/python3.8" libraryPath="/usr/local/lib"
