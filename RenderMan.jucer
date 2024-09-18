@@ -56,13 +56,14 @@
       </MODULEPATHS>
     </XCODE_MAC>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile" vst3Folder="VST3_SDK" extraCompilerFlags="-fPIC"
-                extraLinkerFlags="-shared -lpython3.8 -lboost_python38" cppLanguageStandard="-std=c++11"
-                vstLegacyFolder="/RenderMan/VST3_SDK">
+                extraLinkerFlags="-shared -lpython3.8 -lboost_python38" cppLanguageStandard="-std=c++11">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="renderman"
-                       headerPath="/usr/local/include/python3.8" libraryPath="/usr/local/lib"/>
+                       headerPath="/usr/local/include/python3.8&#10;/RenderMan/VST3_SDK"
+                       libraryPath="/usr/local/lib" defines="JucePlugin_Build_VST=1&#10;JucePlugin_Build_VST3=1"/>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="renderman"
-                       headerPath="/usr/local/include/python3.8" libraryPath="/usr/local/lib"/>
+                       headerPath="/usr/local/include/python3.8&#10;/RenderMan/VST3_SDK"
+                       libraryPath="/usr/local/lib" defines="JucePlugin_Build_VST=1&#10;JucePlugin_Build_VST3=1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="JuceLibraryCode/modules"/>
