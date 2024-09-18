@@ -21,7 +21,7 @@ void RenderEngine::fillAvailablePluginsInfo(const std::string& path,
     pluginFormatManager.addDefaultFormats();
 
     // Explicitly add VST3 format
-    pluginFormatManager.addFormat(new VST3PluginFormat());
+    // pluginFormatManager.addFormat(new VST3PluginFormat());
 
     std::cout << "Available plugin formats:" << std::endl;
     for (int i = 0; i < pluginFormatManager.getNumFormats(); ++i) {
