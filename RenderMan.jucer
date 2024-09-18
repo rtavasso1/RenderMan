@@ -3,7 +3,7 @@
 <JUCERPROJECT id="EHAJpP" name="RenderMan" projectType="dll" version="1.0.0"
               bundleIdentifier="com.yourcompany.RenderMan" includeBinaryInAppConfig="1"
               displaySplashScreen="0" reportAppUsage="0" splashScreenColour="Dark"
-              companyCopyright="" jucerFormatVersion="1">
+              companyCopyright="" jucerFormatVersion="1" defines="JUCE_PLUGINHOST_VST3=1&#10;JUCE_PLUGINHOST_VST=1">
   <MAINGROUP id="tONOKg" name="RenderMan">
     <GROUP id="{4A809F36-0B47-21E3-7688-8CF65B68EF74}" name="Maximilian">
       <GROUP id="{581DA4A2-AF43-FE18-47C2-CA1585A8F30E}" name="libs">
@@ -60,11 +60,9 @@
                 vstLegacyFolder="/RenderMan/VST3_SDK">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="renderman"
-                       headerPath="/usr/local/include/python3.8" libraryPath="/usr/local/lib"
-                       defines="JUCE_PLUGINHOST_VST3=1&#10;JUCE_PLUGINHOST_VST=1"/>
+                       headerPath="/usr/local/include/python3.8" libraryPath="/usr/local/lib"/>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="renderman"
-                       headerPath="/usr/local/include/python3.8" libraryPath="/usr/local/lib"
-                       defines="JUCE_PLUGINHOST_VST3=1&#10;JUCE_PLUGINHOST_VST=1"/>
+                       headerPath="/usr/local/include/python3.8" libraryPath="/usr/local/lib"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="JuceLibraryCode/modules"/>
