@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="EHAJpP" name="RenderMan" projectType="dll" version="1.0.0"
+<JUCERPROJECT id="EHAJpP" name="RenderMan" projectType="consoleapp" version="1.0.0"
               bundleIdentifier="com.yourcompany.RenderMan" includeBinaryInAppConfig="1"
               displaySplashScreen="0" reportAppUsage="0" splashScreenColour="Dark"
               companyCopyright="" jucerFormatVersion="1" defines="JUCE_PLUGINHOST_VST3=1&#10;JUCE_PLUGINHOST_VST=1">
